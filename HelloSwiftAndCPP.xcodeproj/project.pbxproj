@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0FB0086A1949E50A0014F78F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB008691949E50A0014F78F /* main.swift */; };
+		0FB00875194A1BE40014F78F /* SomeCPPClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FB00874194A1BE40014F78F /* SomeCPPClass.cpp */; };
+		0FB00878194A22390014F78F /* XYZSomething.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB00877194A22390014F78F /* XYZSomething.m */; };
+		0FB0087B194A23AF0014F78F /* ABCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0FB0087A194A23AF0014F78F /* ABCpp.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,13 @@
 /* Begin PBXFileReference section */
 		0FB008661949E50A0014F78F /* HelloSwiftAndCPP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HelloSwiftAndCPP; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FB008691949E50A0014F78F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		0FB008701949E5550014F78F /* HelloSwiftAndCPP-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloSwiftAndCPP-Bridging-Header.h"; sourceTree = "<group>"; };
+		0FB008731949E5C50014F78F /* SomeCPPClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomeCPPClass.h; sourceTree = "<group>"; };
+		0FB00874194A1BE40014F78F /* SomeCPPClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SomeCPPClass.cpp; sourceTree = "<group>"; };
+		0FB00876194A22390014F78F /* XYZSomething.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSomething.h; sourceTree = "<group>"; };
+		0FB00877194A22390014F78F /* XYZSomething.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSomething.m; sourceTree = "<group>"; };
+		0FB00879194A23AF0014F78F /* ABCpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCpp.h; sourceTree = "<group>"; };
+		0FB0087A194A23AF0014F78F /* ABCpp.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ABCpp.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,13 @@
 			isa = PBXGroup;
 			children = (
 				0FB008691949E50A0014F78F /* main.swift */,
+				0FB00874194A1BE40014F78F /* SomeCPPClass.cpp */,
+				0FB008731949E5C50014F78F /* SomeCPPClass.h */,
+				0FB008701949E5550014F78F /* HelloSwiftAndCPP-Bridging-Header.h */,
+				0FB00876194A22390014F78F /* XYZSomething.h */,
+				0FB00877194A22390014F78F /* XYZSomething.m */,
+				0FB00879194A23AF0014F78F /* ABCpp.h */,
+				0FB0087A194A23AF0014F78F /* ABCpp.mm */,
 			);
 			path = HelloSwiftAndCPP;
 			sourceTree = "<group>";
@@ -118,6 +135,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FB0087B194A23AF0014F78F /* ABCpp.mm in Sources */,
+				0FB00878194A22390014F78F /* XYZSomething.m in Sources */,
+				0FB00875194A1BE40014F78F /* SomeCPPClass.cpp in Sources */,
 				0FB0086A1949E50A0014F78F /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,7 +181,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.9;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -196,21 +217,29 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				METAL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.9;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
 		0FB0086E1949E50A0014F78F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloSwiftAndCPP/HelloSwiftAndCPP-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		0FB0086F1949E50A0014F78F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloSwiftAndCPP/HelloSwiftAndCPP-Bridging-Header.h";
 			};
 			name = Release;
 		};
