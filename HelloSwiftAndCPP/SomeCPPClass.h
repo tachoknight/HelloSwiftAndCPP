@@ -9,14 +9,22 @@
 #ifndef __somecppclass__
 #define __somecppclass__
 
-#include <stdio.h>
+#include <iostream>
+#include <string>
+using std::cout;
+using std::endl;
+using std::string;
 
 class Foo
 {
 public:
+    
     Foo()
     {
-        printf("In the foo!\n");
+        cout << "In the foo!" << endl;
+        
+        string someString("hello from a C++ constructor!");
+        cout << someString << endl;
     }
     
     int addNums(int x, int y);
