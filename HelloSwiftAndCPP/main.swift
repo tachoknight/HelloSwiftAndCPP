@@ -8,12 +8,12 @@
 
 import Foundation
 
-println("Hello, World!")
+print("Hello, World!")
 
 let foo = XYZSomething()
 
-println("Val is \(foo.addX(50, andY: 50))")
+print("Val is \(foo.addX(50, andY: 50))")
 
 let bar = ABCpp();
 
-println("And from CPP the value is \(bar.playWithFoo())")
+print("And from CPP the value is \(bar.playWithFoo())")
